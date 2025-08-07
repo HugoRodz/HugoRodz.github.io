@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de boda – Gisela &amp; Jorge</title>
+  <style>
+    /* Import elegant Google fonts (fallback a serif if not available) */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+    :root {
+      --primary-bg: #f8f2e9;
+      --secondary-bg: #fff7ef;
+      --accent-color: #8b5e3c;
+      --text-color: #5c3a21;
+      --highlight-color: #cba679;
+      --heading-font: 'Playfair Display', Georgia, serif;
+      --body-font: 'Montserrat', Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--primary-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-family: var(--body-font);
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      /* Use the couple's photo as the hero background */
+      background: url('couple.jpg') center/cover no-repeat;
+      color: var(--primary-bg);
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    header .header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      backdrop-filter: blur(2px);
+    }
+    header h1 {
+      margin: 0;
+      font-family: var(--heading-font);
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    header h2 {
+      margin-top: 0.5rem;
+      font-family: var(--heading-font);
+      font-size: 1.4rem;
+      font-weight: normal;
+      font-style: italic;
+    }
+    header p {
+      font-family: var(--body-font);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: var(--secondary-bg);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-family: var(--body-font);
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--accent-color);
+      letter-spacing: 1px;
+    }
+    .details-list {
+      list-style: none;
+      padding: 0;
+    }
+    .details-list li {
+      margin-bottom: 0.5rem;
+    }
+    .rsvp-form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .rsvp-form label {
+      font-weight: bold;
+    }
+    .rsvp-form input,
+    .rsvp-form textarea {
+      padding: 0.5rem;
+      border: 1px solid #d9c8b6;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .rsvp-form button {
+      padding: 0.75rem;
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .rsvp-form button:hover {
+      background: var(--highlight-color);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .gallery img {
+      width: calc(50% - 1rem);
+      max-width: 320px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .faq dt {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .faq dd {
+      margin: 0 0 1rem 0;
+    }
+    footer {
+      background: var(--secondary-bg);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--accent-color);
+      letter-spacing: 0.5px;
+    }
+    @media (min-width: 600px) {
+      .rsvp-form {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .rsvp-form textarea {
+        grid-column: span 2;
+      }
+    }
+    /* Custom styles for detail cards */
+    .detail-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .detail-card {
+      background: var(--secondary-bg);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      transition: transform 0.2s ease;
+    }
+    .detail-card:hover {
+      transform: translateY(-3px);
+    }
+    .detail-card svg {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      color: var(--accent-color);
+    }
+    .detail-card h4 {
+      margin: 0 0 0.25rem 0;
+      font-family: var(--heading-font);
+      font-size: 1.2rem;
+      color: var(--accent-color);
+    }
+    .detail-card p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="inicio">
+    <div class="header-content">
+      <h1>Gisela&nbsp;Esmeralda &amp; Jorge&nbsp;Hugo</h1>
+      <h2>Dueñas Fuentes &amp; Rodríguez Peñaloza</h2>
+      <p style="margin:0.5rem 0 0;font-style:italic; font-size:1.1rem;">29 de noviembre de 2025 – Comala</p>
+    </div>
+  </header>
+  <nav>
+    <a href="#historia">Nuestra historia</a>
+    <a href="#detalles">Detalles del evento</a>
+    <a href="#rsvp">Confirmar asistencia</a>
+    <a href="#galeria">Galería</a>
+    <a href="#regalos">Registro de regalos</a>
+    <a href="#viaje">Viaje y alojamiento</a>
+    <a href="#actualizaciones">Actualizaciones</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <section id="historia">
+    <h3 class="section-title">Nuestra historia</h3>
+    <p>En la vida, cada paso nos llevó a encontrarnos. Después de risas, aventuras y miles de conversaciones, decidimos unir nuestras vidas para siempre. Ahora queremos compartir esa alegría con ustedes. &iexcl;Acompáñanos a celebrar nuestra historia de amor!</p>
+  </section>
+
+  <section id="detalles">
+    <h3 class="section-title">Detalles del evento</h3>
+    <div class="detail-cards">
+      <div class="detail-card">
+        <!-- Calendario -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <div>
+          <h4>Fecha</h4>
+          <p>Sábado 29 de noviembre de 2025</p>
+        </div>
+      </div>
+      <div class="detail-card">
+        <!-- Hora de la ceremonia -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"></circle>
+          <polyline points="12 7 12 12 15 15"></polyline>
+        </svg>
+        <div>
+          <h4>Ceremonia</h4>
+          <p>14:00 hrs – Museo de Comala (ceremonia religiosa)</p>
+        </div>
+      </div>
+      <div class="detail-card">
+        <!-- Recepción -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <div>
+          <h4>Recepción</h4>
+          <p>16:30 hrs – Jardín de Comala</p>
+        </div>
+      </div>
+      <div class="detail-card">
+        <!-- Código de vestimenta -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 20h18l-9-7-9 7z"></path>
+          <path d="M12 13V6a2 2 0 1 0-3-1.7"></path>
+        </svg>
+        <div>
+          <h4>Código de vestimenta</h4>
+          <p>Formal campestre</p>
+        </div>
+      </div>
+      <div class="detail-card">
+        <!-- Cómo llegar -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <div>
+          <h4>Cómo llegar</h4>
+          <p><a href="https://www.google.com/maps?q=Museo+de+Comala" target="_blank">Abrir mapa</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp">
+    <h3 class="section-title">Confirmar asistencia</h3>
+    <p>Por favor, confirmen su asistencia antes del 31 de octubre de 2025. Sus respuestas nos ayudarán a planificar mejor nuestro día especial.</p>
+    <form class="rsvp-form" action="mailto:novios@example.com" method="post" enctype="text/plain">
+      <div>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="Nombre" required>
+      </div>
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="Correo" required>
+      </div>
+      <div>
+        <label for="invitados">Número de invitados</label>
+        <input type="number" id="invitados" name="Invitados" min="1" max="5" required>
+      </div>
+      <div>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Déjanos tus comentarios..."></textarea>
+      </div>
+      <div style="grid-column: span 2; text-align: center;">
+        <button type="submit">Enviar confirmación</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="galeria">
+    <h3 class="section-title">Galería</h3>
+    <p>Aquí compartiremos algunas de nuestras fotos favoritas. ¡Regresa pronto para ver más recuerdos!</p>
+    <div class="gallery">
+      <img src="couple.jpg" alt="Foto de Gisela y Jorge">
+      <img src="invitacion.png" alt="Invitación digital de boda">
+      <!-- Puedes reemplazar estas imágenes con fotografías reales de la pareja o del lugar de la boda -->
+    </div>
+  </section>
+
+  <!-- Sección de registro de regalos -->
+  <section id="regalos">
+    <h3 class="section-title">Registro de regalos</h3>
+    <p>Nuestro mejor regalo es tu presencia, pero si deseas contribuir con un detalle, hemos preparado algunas ideas y listas de regalos.</p>
+    <ul class="details-list">
+      <li><strong>Mesa de regalos en tienda departamental:</strong> Hemos creado una lista en Liverpool y Sears que puedes consultar en los siguientes enlaces (es necesario introducir nuestro nombre para buscar la lista): <a href="https://liverpool.com.mx/mesa-de-regalos" target="_blank">Liverpool</a> | <a href="https://www.sears.com.mx/mesa-de-regalos" target="_blank">Sears</a>.</li>
+      <li><strong>Contribución a nuestra luna de miel:</strong> Si prefieres apoyar nuestro viaje de luna de miel, podemos proporcionarte los datos de cuenta o un link a PayPal a petición.</li>
+      <li><strong>Detalles hechos a mano:</strong> También apreciamos regalos creativos y personalizados que recuerden este día tan especial.</li>
+    </ul>
+  </section>
+
+  <!-- Sección de viaje y alojamiento -->
+  <section id="viaje">
+    <h3 class="section-title">Viaje y alojamiento</h3>
+    <p>Queremos que tu estancia en Comala sea lo más cómoda posible. Aquí encontrarás información útil sobre cómo llegar y dónde hospedarte.</p>
+    <ul class="details-list">
+      <li><strong>Aeropuerto más cercano:</strong> Aeropuerto Nacional de Colima (CLQ) y Aeropuerto Internacional de Guadalajara (GDL). Desde cualquiera de ellos puedes tomar un taxi o rentar un coche para llegar a Comala.</li>
+      <li><strong>Transporte:</strong> Taxis y transportes privados están disponibles en ambos aeropuertos. El trayecto desde Colima al Museo de Comala dura aproximadamente 30 minutos.</li>
+      <li><strong>Hoteles sugeridos:</strong>
+        <ul>
+          <li><em>Hotel Casa Comala</em> &ndash; un acogedor hotel boutique a 5 minutos a pie del museo.</li>
+          <li><em>Hostería Nido de Colibrí</em> &ndash; alojamiento rústico con encanto, ubicado a 10 minutos en coche.</li>
+          <li><em>Hotel Comala Real</em> &ndash; habitaciones amplias y cómodas en el corazón de la ciudad.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sección de actualizaciones -->
+  <section id="actualizaciones">
+    <h3 class="section-title">Actualizaciones</h3>
+    <p>Conforme se acerque nuestra boda, compartiremos aquí cualquier noticia o cambio relevante para nuestros invitados, como ajustes en el horario, recomendaciones de viaje o medidas sanitarias.</p>
+    <p>Te invitamos a regresar a este apartado periódicamente para estar al tanto de las últimas novedades. ¡Gracias por acompañarnos en esta aventura!</p>
+  </section>
+
+  <section id="faq">
+    <h3 class="section-title">Preguntas frecuentes</h3>
+    <dl class="faq">
+      <dt>¿Hay estacionamiento disponible?</dt>
+      <dd>Sí, el Museo de Comala cuenta con estacionamiento para invitados. Adicionalmente, habrá señalización para lugares cercanos si se llena el estacionamiento principal.</dd>
+      <dt>¿Puedo llevar acompañante?</dt>
+      <dd>Queremos compartir este día con todos nuestros seres queridos. Indica el número total de invitados (incluido tu acompañante) en el formulario de confirmación de asistencia.</dd>
+      <dt>¿Cuándo debo confirmar mi asistencia?</dt>
+      <dd>Por favor confirma tu asistencia antes del 31 de octubre de 2025 para que podamos organizar todos los detalles.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    Con amor, Gisela Esmeralda Dueñas Fuentes y Jorge Hugo Rodríguez Peñaloza &ndash; 2025
+  </footer>
+</body>
+</html>
