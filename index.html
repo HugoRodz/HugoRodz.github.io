@@ -107,7 +107,8 @@
     /* Hamburger menu icon, hidden by default */
     .menu-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      line-height: 1;
       cursor: pointer;
       color: var(--accent-color);
       margin-right: 1rem;
@@ -116,6 +117,8 @@
       padding: 2rem 1rem;
       max-width: 900px;
       margin: 0 auto;
+      /* Añade margen de desplazamiento para que las secciones no queden ocultas tras el menú fijo */
+      scroll-margin-top: 80px;
     }
     .section-title {
       font-family: var(--heading-font);
@@ -219,6 +222,31 @@
       }
       nav a {
         padding: 0.5rem 0;
+      }
+    }
+
+    /* Mobile-specific styles for the hero section */
+    @media (max-width: 600px) {
+      header {
+        /* Increase height to ensure the background image isn’t overly cropped */
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 1rem;
+      }
+      header .header-content {
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+      header h2 {
+        font-size: 1rem;
+      }
+      header p {
+        font-size: 0.9rem;
       }
     }
     /* Custom styles for detail cards */
@@ -560,6 +588,16 @@
           navLinks.classList.toggle('show');
         });
       }
+
+      // Al hacer clic en cualquier enlace de navegación en dispositivos móviles, cierra el menú
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
+          }
+        });
+      });
     });
 
     // Cuenta regresiva hasta la fecha de la boda
