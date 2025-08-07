@@ -67,14 +67,21 @@
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      align-items: center;
       padding: 1rem;
       background: var(--secondary-bg);
       position: sticky;
       top: 0;
       z-index: 2;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
     }
     nav a {
       color: var(--accent-color);
@@ -96,6 +103,14 @@
     }
     nav a:hover::after {
       width: 100%;
+    }
+    /* Hamburger menu icon, hidden by default */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--accent-color);
+      margin-right: 1rem;
     }
     section {
       padding: 2rem 1rem;
@@ -182,6 +197,30 @@
         grid-column: span 2;
       }
     }
+
+    /* Responsive navigation: collapse links on small screens */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      nav .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      nav .nav-links.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      nav a {
+        padding: 0.5rem 0;
+      }
+    }
     /* Custom styles for detail cards */
     .detail-cards {
       display: grid;
@@ -216,6 +255,41 @@
     .detail-card p {
       margin: 0;
     }
+
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 2rem;
+      border-left: 3px solid var(--accent-color);
+      list-style: none;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      list-style: none;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 0.3rem;
+      width: 16px;
+      height: 16px;
+      background: var(--highlight-color);
+      border: 3px solid var(--accent-color);
+      border-radius: 50%;
+    }
+    .timeline-date {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      margin-bottom: 0.25rem;
+    }
+    .timeline-content {
+      font-family: var(--body-font);
+    }
   </style>
 </head>
 <body>
@@ -227,19 +301,54 @@
     </div>
   </header>
   <nav>
-    <a href="#historia">Nuestra historia</a>
-    <a href="#detalles">Detalles del evento</a>
-    <a href="#rsvp">Confirmar asistencia</a>
-    <a href="#galeria">Galería</a>
-    <a href="#regalos">Registro de regalos</a>
-    <a href="#viaje">Viaje y alojamiento</a>
-    <a href="#actualizaciones">Actualizaciones</a>
-    <a href="#faq">FAQ</a>
+    <!-- On small screens the menu will collapse into a hamburger icon. When clicked, the links will show or hide. -->
+    <span class="menu-toggle" id="nav-toggle">☰</span>
+    <div class="nav-links">
+      <a href="#historia">Nuestra historia</a>
+      <a href="#contador">Cuenta regresiva</a>
+      <a href="#detalles">Detalles del evento</a>
+      <a href="#rsvp">Confirmar asistencia</a>
+      <a href="#galeria">Galería</a>
+      <a href="#regalos">Registro de regalos</a>
+      <a href="#viaje">Viaje y alojamiento</a>
+      <a href="#actualizaciones">Actualizaciones</a>
+      <a href="#libro">Libro de visitas</a>
+      <a href="#playlist">Playlist</a>
+      <a href="#album">Álbum &amp; hashtag</a>
+      <a href="#faq">FAQ</a>
+    </div>
   </nav>
 
   <section id="historia">
     <h3 class="section-title">Nuestra historia</h3>
-    <p>En la vida, cada paso nos llevó a encontrarnos. Después de risas, aventuras y miles de conversaciones, decidimos unir nuestras vidas para siempre. Ahora queremos compartir esa alegría con ustedes. &iexcl;Acompáñanos a celebrar nuestra historia de amor!</p>
+    <p>A lo largo de los años, nuestra relación ha estado marcada por momentos inolvidables. A continuación compartimos algunos hitos que han sido especialmente significativos para nosotros.</p>
+    <ul class="timeline">
+      <li class="timeline-item">
+        <div class="timeline-date">2018</div>
+        <div class="timeline-content">Nos conocimos en la universidad y nos hicimos amigos inseparables.</div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-date">2019</div>
+        <div class="timeline-content">Nuestra primera cita oficial: una caminata por el pueblo mágico de Comala que terminó en café y risas.</div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-date">2022</div>
+        <div class="timeline-content">Durante un viaje sorpresa, Jorge pidió a Gisela que fuera su compañera de vida. ¡Y ella dijo que sí!</div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-date">2025</div>
+        <div class="timeline-content">Nos preparamos para dar el gran paso y comenzar un nuevo capítulo juntos.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sección de cuenta regresiva -->
+  <section id="contador">
+    <h3 class="section-title">Cuenta regresiva</h3>
+    <p>¡Faltan!</p>
+    <div id="countdown" style="font-size:2rem; text-align:center; font-family:var(--heading-font); color:var(--accent-color);">
+      <span id="days">0</span> días, <span id="hours">0</span> horas, <span id="minutes">0</span> minutos, <span id="seconds">0</span> segundos
+    </div>
   </section>
 
   <section id="detalles">
@@ -323,6 +432,19 @@
         <input type="number" id="invitados" name="Invitados" min="1" max="5" required>
       </div>
       <div>
+        <label for="menu">Preferencia de menú</label>
+        <select id="menu" name="Menú">
+          <option value="carne">Carne</option>
+          <option value="vegetariano">Vegetariano</option>
+          <option value="vegano">Vegano</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <div>
+        <label for="alergias">¿Alguna alergia o restricción?</label>
+        <input type="text" id="alergias" name="Alergias" placeholder="Ej.: frutos secos, gluten...">
+      </div>
+      <div>
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Déjanos tus comentarios..."></textarea>
       </div>
@@ -377,6 +499,40 @@
     <p>Te invitamos a regresar a este apartado periódicamente para estar al tanto de las últimas novedades. ¡Gracias por acompañarnos en esta aventura!</p>
   </section>
 
+  <!-- Sección de libro de visitas -->
+  <section id="libro">
+    <h3 class="section-title">Libro de visitas</h3>
+    <p>Nos encantaría recibir tus buenos deseos y mensajes para nuestro gran día. Completa el siguiente formulario y envía tus palabras directamente a nuestro correo.</p>
+    <form class="rsvp-form" action="mailto:novios@example.com" method="post" enctype="text/plain">
+      <div>
+        <label for="nombre-libro">Nombre</label>
+        <input type="text" id="nombre-libro" name="Nombre" required>
+      </div>
+      <div>
+        <label for="mensaje-libro">Mensaje</label>
+        <textarea id="mensaje-libro" name="Mensaje" rows="3" placeholder="Tu mensaje de buenos deseos..." required></textarea>
+      </div>
+      <div style="grid-column: span 2; text-align: center;">
+        <button type="submit">Enviar mensaje</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Sección de playlist -->
+  <section id="playlist">
+    <h3 class="section-title">Nuestra playlist</h3>
+    <p>Comparte con nosotros el ambiente musical que nos inspira. Aquí podrás escuchar algunas de nuestras canciones favoritas. ¡Que suene la música!</p>
+    <!-- Integración de playlist de Spotify. Puedes reemplazar el enlace con una playlist personalizada. -->
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWU0ScTcjJBdj?utm_source=generator" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+
+  <!-- Sección de álbum y hashtag -->
+  <section id="album">
+    <h3 class="section-title">Álbum y hashtag</h3>
+    <p>Queremos que todos los momentos especiales queden inmortalizados. Usa nuestro hashtag <strong>#JorgeYGisela2025</strong> al compartir tus fotos en redes sociales. Después de la boda, publicaremos el enlace a nuestro álbum de fotos profesional en esta sección para que puedas revivir los mejores momentos.</p>
+    <p>Si deseas enviarnos alguna foto o compartir tus propias imágenes, no dudes en hacerlo a través de nuestro correo electrónico o etiquetándonos en redes sociales.</p>
+  </section>
+
   <section id="faq">
     <h3 class="section-title">Preguntas frecuentes</h3>
     <dl class="faq">
@@ -392,5 +548,44 @@
   <footer>
     Con amor, Gisela Esmeralda Dueñas Fuentes y Jorge Hugo Rodríguez Peñaloza &ndash; 2025
   </footer>
+
+  <!-- JavaScript para funcionalidades interactivas -->
+  <script>
+    // Menú hamburguesa: mostrar u ocultar enlaces en pantallas pequeñas
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelector('nav .nav-links');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+
+    // Cuenta regresiva hasta la fecha de la boda
+    (function() {
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      // Fecha de la boda: 29 de noviembre de 2025 a las 14:00 (hora de México) UTC-06
+      const weddingDate = new Date('2025-11-29T14:00:00-06:00');
+      function updateCountdown() {
+        const now = new Date();
+        let diff = weddingDate - now;
+        if (diff < 0) diff = 0;
+        const seconds = Math.floor((diff / 1000) % 60);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        daysEl.textContent = days;
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 </html>
