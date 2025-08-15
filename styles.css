@@ -11,6 +11,48 @@
     --white: #fff;
     --shadow: 0 2px 15px rgba(30,124,107,0.08);
 }
+/* Tipografías y ajustes globales añadidos */
+:root {
+    --font-script: 'Great Vibes', cursive;
+    --font-primary: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --border-radius: 14px;
+    --transition: 0.28s ease;
+}
+/* Estilos globales base */
+html, body {
+    height: 100%;
+}
+body {
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    background: linear-gradient(180deg, #fbfbfb, #f7f9f7);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Navegación más ligera */
+.nav-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; display:flex; align-items:center; justify-content:space-between; }
+.nav-logo .couple-names { font-family: var(--font-script); color: var(--primary-dark); font-size: 1.05rem; }
+.nav-menu { list-style: none; display:flex; gap: 1rem; align-items:center; }
+.nav-menu .nav-link { text-decoration:none; color: var(--text-dark); padding: 0.5rem 0.6rem; border-radius: 8px; transition: var(--transition); }
+.nav-menu .nav-link:hover { background: rgba(30,124,107,0.06); color: var(--primary-dark); }
+
+/* Espaciado más consistente entre secciones */
+section { padding: 4rem 0; }
+.container { padding: 0 18px; }
+
+/* Ajuste extra para section-title: menos sombra y fondo más sutil */
+.section-title { box-shadow: none; background: transparent; padding-left: 0; padding-right:0; }
+
+/* Mejora visual para botones */
+.location-btn, .rsvp-btn { transition: transform var(--transition), box-shadow var(--transition); }
+.location-btn:hover, .rsvp-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(30,124,107,0.07); }
+
+/* Galería: centrar y dar espacio */
+.gallery-tiles { justify-content: center; grid-auto-rows: 1fr; }
+
 /* HISTORIA - LÍNEA DE TIEMPO VISUAL */
 .story-timeline {
     max-width: 1100px;
@@ -157,7 +199,7 @@ section { padding: 5rem 0; }
     transition: box-shadow 0.3s;
 }
 .event-card:hover, .timeline-item:hover, .schedule-item:hover, .faq-item:hover, .gift-card:hover, .location-details:hover {
-    box-shadow: 0 8px 32px rgba(30,124,107,0.13);
+    box-shadow: 0 8px 24px rgba(30,124,107,0.10);
 }
 .card-icon {
     background: var(--primary-color);
@@ -472,6 +514,20 @@ section { padding: 5rem 0; }
 .hero-content {
     z-index: 2;
 }
+/* Tipografía del hero */
+.hero-title {
+    font-family: var(--font-script);
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    color: var(--white);
+    text-shadow: 0 8px 28px rgba(0,0,0,0.5);
+    margin-bottom: 0.2rem;
+}
+.hero-names {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: clamp(1rem, 2.6vw, 1.5rem);
+    color: rgba(255,255,255,0.95);
+}
 
 /* CRONOGRAMA - LÍNEA DE TIEMPO VERTICAL */
 .schedule-timeline {
@@ -521,19 +577,18 @@ section { padding: 5rem 0; }
     font-size: 1.2rem;
 }
 .schedule-event p {
-    color: var(--text-light);
-}
-.schedule-item::before {
-    content: '\f073';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--white);
+    min-height: 78vh;
+    background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.12)), url('images/colima.jpeg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 3.6rem 0;
     border-radius: 50%;
     padding: 0.2rem;
     z-index: 3;
@@ -1016,11 +1071,11 @@ section {
     right: 35px;
     color: var(--white);
     font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.modal-nav button {
+    background: linear-gradient(180deg, #0f241d, var(--text-dark));
+    color: var(--white);
+    padding: 3.2rem 0 1.2rem;
+    position: relative;
+    overflow: hidden;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1618,7 +1673,7 @@ section {
     border-radius: 12px;
     overflow: hidden;
     background: var(--white);
-    box-shadow: 0 6px 20px rgba(30,124,107,0.06);
+    box-shadow: 0 6px 18px rgba(30,124,107,0.06);
     transition: transform 0.22s var(--transition), box-shadow 0.22s var(--transition);
     display: block;
 }
