@@ -32,43 +32,50 @@
   </header>
 
   <main id="main">
-    <section id="inicio" class="hero">
-      <div class="container hero-inner">
-        <!-- decorative leaf (top) -->
+    <section id="inicio" class="hero hero-premium">
+      <div class="hero-bg">
+        <img src="images/colima.jpeg" alt="Fondo boda" loading="lazy">
+        <div class="hero-overlay"></div>
         <svg class="decor leaf-top leaf-float" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <g fill="none" stroke="none">
             <path d="M20 100 C40 20, 140 20, 160 100 C140 180, 40 180, 20 100 Z" fill="var(--emerald)" opacity="0.12"/>
             <path d="M60 100 C75 70, 125 70, 140 100" stroke="var(--emerald-600)" stroke-width="1.5" fill="none" opacity="0.18"/>
           </g>
         </svg>
-
-        <h1 class="couple">Jorge <span class="amp">&</span> Gisela</h1>
-        <p class="hero-sub">Nos casamos — 29 de Noviembre, 2025</p>
+      </div>
+      <div class="container hero-inner">
+        <h1 class="couple premium">Jorge <span class="amp">&</span> Gisela</h1>
+        <p class="hero-date-premium">29 de Noviembre, 2025</p>
+        <div class="countdown" id="countdown" aria-label="Cuenta regresiva para la boda">
+          <div class="cd-item"><span id="cd-days">00</span><span class="cd-label">días</span></div>
+          <div class="cd-item"><span id="cd-hours">00</span><span class="cd-label">horas</span></div>
+          <div class="cd-item"><span id="cd-minutes">00</span><span class="cd-label">min</span></div>
+          <div class="cd-item"><span id="cd-seconds">00</span><span class="cd-label">seg</span></div>
+        </div>
+        <p class="hero-sub">¡Nos casamos! Acompáñanos en este día tan especial</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#rsvp">Confirmar asistencia</a>
-          <a class="btn ghost" href="#galeria">Ver galería</a>
+          <a class="btn primary big" href="#rsvp">Confirmar asistencia</a>
         </div>
       </div>
     </section>
 
-    <section id="historia" class="section">
+    <section id="historia" class="section timeline-section">
       <div class="container">
         <h2 class="title">Nuestra Historia</h2>
-        <p class="center muted">Desde el primer encuentro hasta hoy — unos hitos que nos llevaron a este día.</p>
-        <ul class="timeline">
-          <li>
-            <strong>26 feb, 2024</strong>
-            <span>Primer encuentro — una charla que se volvió larga y especial.</span>
-          </li>
-          <li>
-            <strong>26 ene, 2025</strong>
-            <span>Primera cita — descubrimos afinidades y risas compartidas.</span>
-          </li>
-          <li>
-            <strong>27 jun, 2025</strong>
-            <span>La promesa — el momento en que supimos que sería para siempre.</span>
-          </li>
-        </ul>
+        <div class="historia-blocks">
+          <div class="historia-item">
+            <h3 class="historia-title">Primer encuentro — Sahuayo</h3>
+            <p>Fue una tarde templada en Sahuayo, cuando el trabajo nos convirtió en presencia el uno del otro. Nos presentaron con cortesía; un saludo tranquilo y una conversación que, sin llamarlo así, prendió una curiosidad amable. Había en el aire una chispa delicada: palabras que encendieron la posibilidad de algo distinto. Sin promesas, solo la certeza de que algo hermoso había comenzado a germinar.</p>
+          </div>
+          <div class="historia-item">
+            <h3 class="historia-title">La primera cita — Uruapan</h3>
+            <p>Aunque éramos compañeros, aquella noche en Uruapan se sintió como el primer acto verdadero. Esmeralda vino a visitarme y salimos a un bar pequeño, iluminado por la ciudad. Hablamos de sueños, miedos y pequeñas alegrías; cada palabra fue una concesión de confianza que acercó nuestras manos y nuestras historias. Al despedirnos, supimos que lo que había nacido aquella noche no era solo amistad.</p>
+          </div>
+          <div class="historia-item">
+            <h3 class="historia-title">La promesa bajo la ciudad — Uruapan</h3>
+            <p>Una cena sorpresa, la ciudad extendiéndose como un velo de luces, y yo en un punto donde ya no quería esperar: le pedí que fuera mi compañera para siempre. Fue un sí dicho entre sonrisas y un abrazo sostenido, la promesa que cerró el círculo de nuestras pequeñas señales cotidianas y lo abrió a un camino compartido.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -76,16 +83,24 @@
       <div class="container grid-2">
         <div>
           <h2 class="title">El Evento</h2>
-          <div class="card">
-            <h3>Ceremonia</h3>
-            <p><strong>14:00</strong> — Patio Central, Museo Universitario de Hacienda Nogueras</p>
-          </div>
-          <div class="card">
-            <h3>Recepción</h3>
-            <p><strong>16:00</strong> — La Molienda (antigua fábrica de caña)</p>
+          <div class="event-cards">
+            <div class="event-card">
+              <div class="event-icon">💍</div>
+              <div>
+                <h3>Ceremonia</h3>
+                <p><strong>14:00</strong> — Patio Central, Museo Universitario de Hacienda Nogueras</p>
+              </div>
+            </div>
+            <div class="event-card">
+              <div class="event-icon">🎉</div>
+              <div>
+                <h3>Recepción</h3>
+                <p><strong>16:00</strong> — La Molienda (antigua fábrica de caña)</p>
+              </div>
+            </div>
           </div>
         </div>
-        <aside>
+        <aside class="event-aside">
           <h3 class="title-sm">Dress code</h3>
           <p>Formal elegante</p>
           <h3 class="title-sm">Contacto</h3>
@@ -94,17 +109,27 @@
       </div>
     </section>
 
-    <section id="galeria" class="section">
+    <section id="galeria" class="section gallery-section">
       <div class="container">
         <h2 class="title">Galería</h2>
-        <p class="muted center">Pequeño álbum — haz click para ampliar</p>
-        <div class="gallery">
+        <p class="muted center">Nuestro álbum — haz click para ampliar</p>
+        <div class="gallery-masonry card">
           <button class="gallery-item"><img src="images/colima.jpeg" alt="colima"></button>
           <button class="gallery-item"><img src="images/propuesta de matrimonio.jpeg" alt="propuesta"></button>
           <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (1).jpeg" alt="foto"></button>
           <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (3).jpeg" alt="foto"></button>
           <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (4).jpeg" alt="foto"></button>
           <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.14 AM (1).jpeg" alt="foto"></button>
+        </div>
+        <div class="galeria-btns" style="margin-top:2em; justify-content:center; display:flex; gap:1em;">
+          <a href="#rsvp" class="btn primary">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="#fff" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            Confirmar asistencia
+          </a>
+          <a href="#ubicacion" class="btn btn-outline">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="#1db487" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+            Ver ubicación
+          </a>
         </div>
       </div>
 
@@ -114,25 +139,55 @@
       </div>
     </section>
 
-    <section id="ubicacion" class="section bg">
+    <section id="ubicacion" class="section bg location-section">
       <div class="container">
         <h2 class="title">Ubicación</h2>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.282964243695!2d-103.7276246850736!3d19.30896498694359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842545e2e2e2e3%3A0x7e7e7e7e7e7e7e7e!2sMuseo%20Universitario%20de%20Hacienda%20Nogueras!5e0!3m2!1ses-419!2smx!4v1692038400000!5m2!1ses-419!2smx" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="location-premium card">
+          <div class="location-info">
+            <h3>Hacienda Nogueras</h3>
+            <p>Patio Central del Museo Universitario de Hacienda Nogueras, Comala, Colima</p>
+            <a class="btn btn-outline" href="https://www.google.com/maps/place/Museo+Universitario+de+Hacienda+Nogueras/@19.308965,-103.725436,17z" target="_blank">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="#1db487" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+              Ver en Google Maps
+            </a>
+            <a href="#rsvp" class="btn primary" style="margin-left:0.5em;">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="#fff" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Confirmar asistencia
+            </a>
+          </div>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.282964243695!2d-103.7276246850736!3d19.30896498694359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842545e2e2e2e3%3A0x7e7e7e7e7e7e7e7e!2sMuseo%20Universitario%20de%20Hacienda%20Nogueras!5e0!3m2!1ses-419!2smx!4v1692038400000!5m2!1ses-419!2smx" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="rsvp" class="section">
+    <section id="rsvp" class="section rsvp-section">
       <div class="container narrow">
-        <h2 class="title">Confirmar asistencia</h2>
-        <form id="rsvpForm" class="rsvp">
-          <label>Nombre completo<input name="name" id="name" required></label>
-          <label>Asistirán (personas)<select id="guests" name="guests"><option>1</option><option>2</option><option>3</option></select></label>
-          <label>Mensaje (opcional)<textarea id="message" rows="3"></textarea></label>
+        <h2 class="title">Confirma tu asistencia</h2>
+        <form id="rsvpForm" class="rsvp premium-form">
+          <div class="rsvp-fields">
+            <label>Nombre completo<input name="name" id="name" required></label>
+            <label>Asistirán (personas)<select id="guests" name="guests"><option>1</option><option>2</option><option>3</option></select></label>
+            <label>Mensaje (opcional)<textarea id="message" rows="3"></textarea></label>
+          </div>
           <div class="rsvp-actions">
-            <button class="btn primary" type="submit">Enviar</button>
-            <button class="btn ghost" type="button" id="saveDraft">Guardar borrador</button>
+            <button class="btn primary big" type="submit">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="#fff" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Confirmar
+            </button>
+            <button class="btn ghost" type="button" id="saveDraft">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#1db487" stroke-width="2"/><path stroke="#1db487" stroke-width="2" d="M16 2v4M8 2v4M3 10h18"/><rect x="8" y="14" width="8" height="2" rx="1" fill="#1db487"/></svg>
+              Guardar borrador
+            </button>
+            <a href="#ubicacion" class="btn btn-outline">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="#1db487" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+              Ver ubicación
+            </a>
+            <a href="#galeria" class="btn btn-outline">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#1db487" stroke-width="2"/><circle cx="8.5" cy="12.5" r="1.5" fill="#1db487"/><path stroke="#1db487" stroke-width="2" d="M21 19l-5.5-7-4.5 6-3-4-4 5"/></svg>
+              Ver galería
+            </a>
           </div>
           <div id="rsvp-msg" role="status" aria-live="polite" class="muted"></div>
         </form>
@@ -143,13 +198,13 @@
       <div class="container center muted">© 2025 Jorge Hugo & Gisela Esmeralda</div>
     </section>
 
-  <!-- decorative leaf (bottom) -->
-  <svg class="decor leaf-bottom" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g fill="none" stroke="none">
-      <path d="M10 100 C60 20, 240 20, 290 100 C240 180, 60 180, 10 100 Z" fill="var(--emerald)" opacity="0.08"/>
-      <path d="M50 100 C120 70, 180 70, 250 100" stroke="var(--emerald-600)" stroke-width="1.2" fill="none" opacity="0.12"/>
-    </g>
-  </svg>
+    <!-- decorative leaf (bottom) -->
+    <svg class="decor leaf-bottom" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="none">
+        <path d="M10 100 C60 20, 240 20, 290 100 C240 180, 60 180, 10 100 Z" fill="var(--emerald)" opacity="0.08"/>
+        <path d="M50 100 C120 70, 180 70, 250 100" stroke="var(--emerald-600)" stroke-width="1.2" fill="none" opacity="0.12"/>
+      </g>
+    </svg>
   </main>
 
   <script src="script.js"></script>

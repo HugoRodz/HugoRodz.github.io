@@ -1,11 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('error', function(e) {
 // Script minimal para la nueva versión: navegación, galería, rsvp básico
+
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initGallery();
     initRSVP();
+    initCountdown();
 });
+
+function initCountdown(){
+    const weddingDate = new Date('2025-11-29T14:00:00').getTime();
+    const days = document.getElementById('cd-days');
+    const hours = document.getElementById('cd-hours');
+    const minutes = document.getElementById('cd-minutes');
+    const seconds = document.getElementById('cd-seconds');
+    if(!days||!hours||!minutes||!seconds) return;
+    function update(){
+        const now = Date.now();
+        let diff = Math.max(0, weddingDate-now);
+        if(diff<=0){
+            days.textContent = hours.textContent = minutes.textContent = seconds.textContent = '00';
+            document.getElementById('countdown').setAttribute('aria-label','¡Ya es el día!');
+            return;
+        }
+        const d = Math.floor(diff/(1000*60*60*24));
+        const h = Math.floor((diff/(1000*60*60))%24);
+        const m = Math.floor((diff/(1000*60))%60);
+        const s = Math.floor((diff/1000)%60);
+        days.textContent = d.toString().padStart(2,'0');
+        hours.textContent = h.toString().padStart(2,'0');
+        minutes.textContent = m.toString().padStart(2,'0');
+        seconds.textContent = s.toString().padStart(2,'0');
+    }
+    update();
+    setInterval(update,1000);
+}
 
 function initMenu(){
     const btn = document.querySelector('.menu-btn');
