@@ -1,16 +1,14 @@
 // Variables globales
 let currentImageIndex = 0;
-const images = document.querySelectorAll('.gallery-item img');
+let images = [];
 
-// Inicialización cuando el DOM está listo
-document.addEventListener('DOMContentLoaded', function() {
-    initializeCountdown();
+document.addEventListener('DOMContentLoaded', () => {
+    images = Array.from(document.querySelectorAll('.gallery-item img'));
     initializeNavigation();
     initializeGallery();
     initializeRSVPForm();
     initializeSmoothScroll();
     initializeAnimations();
-    initializeSurpriseThemes();
 });
 
 // ---- MODO SORPRÉNDEME: 4 temas aleatorios ----
@@ -130,41 +128,40 @@ function initializeNavigation() {
 
 // Galería de imágenes
 function initializeGallery() {
-    const modal = document.getElementById('galleryModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.close');
-    
-    // Abrir modal al hacer click en una imagen
-    images.forEach((img, index) => {
-        img.addEventListener('click', function() {
-            modal.style.display = 'block';
-            modalImg.src = this.src;
-            currentImageIndex = index;
-        });
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+
+    if (!lightbox || !lightboxImg) return;
+
+    images.forEach((img, i) => {
+        img.addEventListener('click', () => openLightbox(i));
     });
-    
-    // Cerrar modal
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Cerrar modal al hacer click fuera de la imagen
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-    
-    // Navegación con teclado
-    document.addEventListener('keydown', function(e) {
-        if (modal.style.display === 'block') {
-            if (e.key === 'Escape') {
-                modal.style.display = 'none';
-            } else if (e.key === 'ArrowLeft') {
-                changeImage(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeImage(1);
-            }
+
+    function openLightbox(index) {
+        currentImageIndex = index;
+        lightboxImg.src = images[currentImageIndex].src;
+        lightbox.setAttribute('aria-hidden', 'false');
+        lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightbox.classList.remove('open');
+    }
+
+    closeBtn && closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    prevBtn && prevBtn.addEventListener('click', () => changeImage(-1));
+    nextBtn && nextBtn.addEventListener('click', () => changeImage(1));
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('open')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
         }
     });
 }
@@ -172,15 +169,10 @@ function initializeGallery() {
 // Cambiar imagen en el modal
 function changeImage(direction) {
     currentImageIndex += direction;
-    
-    if (currentImageIndex >= images.length) {
-        currentImageIndex = 0;
-    } else if (currentImageIndex < 0) {
-        currentImageIndex = images.length - 1;
-    }
-    
-    const modalImg = document.getElementById('modalImage');
-    modalImg.src = images[currentImageIndex].src;
+    if (currentImageIndex >= images.length) currentImageIndex = 0;
+    if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+    const lightboxImg = document.getElementById('lightbox-img');
+    if (lightboxImg) lightboxImg.src = images[currentImageIndex].src;
 }
 
 // Formulario RSVP
