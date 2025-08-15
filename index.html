@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda Jorge Hugo & Gisela Esmeralda</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span class="couple-names">Jorge Hugo & Gisela Esmeralda</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#nuestra-historia" class="nav-link">Nuestra Historia</a></li>
+          <li><a href="#evento" class="nav-link">El Evento</a></li>
+          <li><a href="#cronograma" class="nav-link">Cronograma</a></li>
+          <li><a href="#galeria" class="nav-link">Galería</a></li>
+          <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+          <li><a href="#rsvp" class="nav-link">Confirmar</a></li>
+          <li><a href="#regalos" class="nav-link">Regalos</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button id="surpriseBtn" class="surprise-btn" aria-label="Sorpréndeme">Sorpréndeme</button>
+          <div class="nav-toggle" aria-label="Abrir menú" role="button" tabindex="0">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO/PORTADA CON TEMPORIZADOR -->
+  <section id="inicio" class="hero">
+    <div class="main-bg-leaves">
+      <svg class="leaf-svg leaf-top-left" viewBox="0 0 120 90"><path d="M10,80 Q40,10 110,30 Q90,80 10,80 Z" fill="#1e7c6b" fill-opacity="0.18"/><path d="M30,60 Q60,30 100,50" stroke="#1e7c6b" stroke-width="3" fill="none" opacity="0.22"/></svg>
+      <svg class="leaf-svg leaf-bottom-right" viewBox="0 0 140 100"><path d="M20,90 Q60,20 130,40 Q110,90 20,90 Z" fill="#1e7c6b" fill-opacity="0.09"/><path d="M40,70 Q80,40 120,80" stroke="#1e7c6b" stroke-width="3" fill="none" opacity="0.13"/></svg>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">¡Nos Casamos!</h1>
+      <h2 class="hero-names">Jorge Hugo & Gisela Esmeralda</h2>
+      <div class="wedding-date">
+        <p class="date">Viernes, 29 de Noviembre</p>
+        <p class="year">2025</p>
+      </div>
+      <blockquote class="hero-quote">"El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."</blockquote>
+
+      <div class="countdown-container">
+        <div class="countdown" id="countdown">
+          <div class="time-unit"><span class="number" id="days">00</span><span class="label">DÍAS</span></div>
+          <div class="time-unit"><span class="number" id="hours">00</span><span class="label">HORAS</span></div>
+          <div class="time-unit"><span class="number" id="minutes">00</span><span class="label">MINUTOS</span></div>
+          <div class="time-unit"><span class="number" id="seconds">00</span><span class="label">SEGUNDOS</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator"><i class="fas fa-chevron-down" aria-hidden="true"></i></div>
+  </section>
+
+  <!-- NUESTRA HISTORIA -->
+  <section id="nuestra-historia" class="our-story">
+    <div class="container">
+      <h2 class="section-title">Nuestra Historia</h2>
+      <div class="story-timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">26 feb, 2024</div>
+          <div class="timeline-content"><h3>Primer encuentro — Sahuayo</h3><p>Fue una tarde templada en Sahuayo, cuando el trabajo nos convirtió en presencia el uno del otro. Nos presentaron con cortesía; un saludo tranquilo y una conversación que, sin llamarlo así, prendió una curiosidad amable. Había en el aire una chispa delicada: palabras que encendieron la posibilidad de algo distinto. Sin promesas, solo la certeza de que algo hermoso había comenzado a germinar.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">26 ene, 2025</div>
+          <div class="timeline-content"><h3>La primera cita — Uruapan</h3><p>Aunque éramos compañeros, aquella noche en Uruapan se sintió como el primer acto verdadero. Esmeralda vino a visitarme y salimos a un bar pequeño, iluminado por la ciudad. Hablamos de sueños, miedos y pequeñas alegrías; cada palabra fue una concesión de confianza que acercó nuestras manos y nuestras historias. Al despedirnos, supimos que lo que había nacido aquella noche no era solo amistad.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">27 jun, 2025</div>
+          <div class="timeline-content"><h3>La promesa bajo la ciudad — Uruapan</h3><p>Una cena sorpresa, la ciudad extendiéndose como un velo de luces, y yo en un punto donde ya no quería esperar: le pedí que fuera mi compañera para siempre. Fue un sí dicho entre sonrisas y un abrazo sostenido, la promesa que cerró el círculo de nuestras pequeñas señales cotidianas y lo abrió a un camino compartido.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALLES DEL EVENTO -->
+  <section id="evento" class="event-details">
+    <div class="container">
+      <h2 class="section-title">Detalles del Evento</h2>
+      <div class="event-cards">
+        <div class="event-card"><div class="card-icon"><i class="fas fa-church"></i></div><h3>Ceremonia</h3><div class="event-info"><p class="time"><i class="fas fa-clock"></i> 2:00 PM</p><p class="location"><i class="fas fa-map-marker-alt"></i> Patio Central (Museo Universitario de Hacienda Nogueras)</p><p class="address">Hacienda Nogueras / Ex Hacienda de Nogueras, Comala, Colima</p></div></div>
+        <div class="event-card"><div class="card-icon"><i class="fas fa-glass-cheers"></i></div><h3>La Fiesta</h3><div class="event-info"><p class="time"><i class="fas fa-clock"></i> 4:00 PM</p><p class="location"><i class="fas fa-map-marker-alt"></i> La Molienda (antigua fábrica de caña)</p><p class="address">Hacienda Nogueras / Ex Hacienda de Nogueras, Comala, Colima</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRONOGRAMA -->
+  <section id="cronograma" class="schedule">
+    <div class="container">
+      <h2 class="section-title">Cronograma del Día</h2>
+      <div class="schedule-timeline">
+        <div class="schedule-item"><div class="schedule-time">16:00</div><div class="schedule-event"><h4><i class="fa-solid fa-church"></i> Ceremonia</h4><p>Parroquia San José, Colima</p></div></div>
+        <div class="schedule-item"><div class="schedule-time">18:00</div><div class="schedule-event"><h4><i class="fa-solid fa-glass-cheers"></i> Recepción</h4><p>Hacienda de los Abuelos</p></div></div>
+        <div class="schedule-item"><div class="schedule-time">20:00</div><div class="schedule-event"><h4><i class="fa-solid fa-utensils"></i> Banquete y fiesta</h4><p>Hacienda de los Abuelos</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="gallery">
+    <div class="container">
+      <h2 class="section-title">Nuestra Galería</h2>
+      <div class="gallery-tiles">
+        <!-- Usamos la misma imagen como placeholder varias veces; reemplaza con tus fotos reales -->
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 1" loading="lazy" data-index="0"></div>
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 2" loading="lazy" data-index="1"></div>
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 3" loading="lazy" data-index="2"></div>
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 4" loading="lazy" data-index="3"></div>
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 5" loading="lazy" data-index="4"></div>
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 6" loading="lazy" data-index="5"></div>
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 7" loading="lazy" data-index="6"></div>
+        <div class="gallery-item"><img src="images/colima.jpeg" alt="Colima 8" loading="lazy" data-index="7"></div>
+      </div>
+
+      <!-- Lightbox mejorado -->
+      <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="lightbox-prev" aria-label="Anterior">&#10094;</button>
+        <img id="lightbox-img" class="lightbox-image" src="" alt="Imagen ampliada" />
+        <button class="lightbox-next" aria-label="Siguiente">&#10095;</button>
+        <div class="lightbox-thumbs" aria-hidden="false"></div>
+      </div>
+    </div>
+    <!-- Hoja decorativa sutil dentro de la sección galería -->
+    <svg class="leaf-svg leaf-section-right" viewBox="0 0 120 90" aria-hidden="true"><path d="M10,80 Q40,10 110,30 Q90,80 10,80 Z" fill="#1e7c6b" fill-opacity="0.06"/></svg>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="location">
+    <div class="container">
+      <h2 class="section-title">Ubicación</h2>
+      <div class="location-content">
+        <div class="location-info">
+          <div class="location-description"><h4>Un lugar con historia</h4><p>La <strong>Hacienda Nogueras</strong>, hoy Museo Universitario, es un espacio emblemático de Comala, Colima. Sus patios y jardines han sido testigos de siglos de historia, arte y cultura. El Patio Central, rodeado de arquitectura colonial y naturaleza, será el escenario perfecto para nuestra ceremonia.<br><br><strong>La Molienda</strong>, ubicada en la misma ex hacienda, fue en su tiempo una fábrica de caña y hoy es un espacio único donde la tradición y la alegría se unen. Aquí celebraremos nuestra fiesta, rodeados de la magia y el encanto de este lugar tan especial.</p></div>
+          <div class="location-details"><h3>Ceremonia</h3><p><strong>Patio Central (Museo Universitario de Hacienda Nogueras)</strong></p><p>Hacienda Nogueras / Ex Hacienda de Nogueras</p><p>Comala, Colima, México</p><a href="https://www.google.com/maps/place/Museo+Universitario+de+Hacienda+Nogueras/@19.308965,-103.725436,17z" class="location-btn" target="_blank"><i class="fas fa-map-marker-alt"></i> Ver en Google Maps</a></div>
+          <div class="location-details"><h3>La Fiesta</h3><p><strong>La Molienda (antigua fábrica de caña)</strong></p><p>Hacienda Nogueras / Ex Hacienda de Nogueras</p><p>Comala, Colima, México</p><a href="https://www.google.com/maps/place/Museo+Universitario+de+Hacienda+Nogueras/@19.308965,-103.725436,17z" class="location-btn" target="_blank"><i class="fas fa-map-marker-alt"></i> Ver en Google Maps</a></div>
+        </div>
+        <div class="map-container"><div id="map" class="map-embed"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.282964243695!2d-103.7276246850736!3d19.30896498694359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842545e2e2e2e2e3%3A0x7e7e7e7e7e7e7e7e!2sMuseo%20Universitario%20de%20Hacienda%20Nogueras!5e0!3m2!1ses-419!2smx!4v1692038400000!5m2!1ses-419!2smx" width="100%" height="320" style="border:0;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.10);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="rsvp">
+    <div class="container">
+      <h2 class="section-title">Confirma tu Asistencia</h2>
+      <div class="rsvp-content">
+        <p class="rsvp-message">Tu presencia es muy importante para nosotros. Por favor confirma tu asistencia antes del <strong>15 de Noviembre de 2025</strong></p>
+        <div id="rsvpSuccess" class="rsvp-success" style="display:none;">¡Gracias por confirmar tu asistencia!</div>
+        <form class="rsvp-form" id="rsvpForm">
+          <div class="form-group"><label for="name"><i class="fa-solid fa-user"></i> Nombre completo</label><input type="text" id="name" name="name" required placeholder="Tu nombre" /></div>
+          <div class="form-group"><label for="guests"><i class="fa-solid fa-users"></i> ¿Cuántos asistirán?</label><select id="guests" name="guests" required><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+          <div class="form-group"><label for="message"><i class="fa-solid fa-comment"></i> Mensaje para los novios (opcional)</label><textarea id="message" name="message" rows="2" placeholder="¡Felicidades!"></textarea></div>
+          <button type="submit" class="rsvp-btn"><i class="fa-solid fa-paper-plane"></i> Confirmar asistencia</button>
+          <div id="rsvp-feedback" style="margin-top:1rem;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGALOS -->
+  <section id="regalos" class="gifts">
+    <div class="container">
+      <h2 class="section-title">Mesa de Regalos</h2>
+      <div class="gifts-content">
+        <p class="gifts-message">Lo más importante para nosotros es tu presencia, pero si deseas hacernos un obsequio, puedes apoyarnos con un depósito del monto que desees. ¡Gracias por tu generosidad y cariño!</p>
+        <div class="gift-card"><h3>Datos bancarios</h3><div class="gift-details"><p><strong>Banco:</strong> BBVA</p><p><strong>Nombre:</strong> Jorge Hugo Rodriguez Peñaloza</p><p><strong>Cuenta:</strong> <span id="cuenta-bancaria">1234567890</span> <button onclick="copiarCuenta()" class="copy-btn"><i class="fas fa-copy"></i> Copiar</button></p><p><strong>CLABE:</strong> 012345678901234567</p></div><div class="gift-qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=1234567890" alt="QR para depósito" /><p class="qr-caption">Escanea para transferir</p></div></div>
+        <div class="gift-alt"><p>¿Prefieres usar PayPal o MercadoPago? <br><a href="#" class="alt-link">Próximamente disponible</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <div class="faq-list">
+        <div class="faq-item"><h4>¿Pueden asistir niños?</h4><p>¡Por supuesto! Los niños son bienvenidos a celebrar con nosotros.</p></div>
+        <div class="faq-item"><h4>¿Hay estacionamiento disponible?</h4><p>Sí, ambos lugares cuentan con estacionamiento gratuito.</p></div>
+        <div class="faq-item"><h4>¿Cuál es el código de vestimenta?</h4><p>Formal elegante. ¡Ven cómodo y listo para disfrutar!</p></div>
+        <div class="faq-item"><h4>¿Puedo llevar acompañante?</h4><p>Por favor indícalo en tu confirmación de asistencia (RSVP).</p></div>
+        <div class="faq-item"><h4>¿Cómo llego al lugar?</h4><p>Consulta la sección <a href="#ubicacion">Ubicación</a> para ver mapas y direcciones.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section"><h3>Contacto</h3><p>Para cualquier pregunta:</p><p><i class="fas fa-phone" aria-label="Teléfono"></i> +52 312 123 4567</p><p><i class="fas fa-envelope" aria-label="Correo electrónico"></i> jorgeygisela2025@gmail.com</p></div>
+        <div class="footer-section"><h3>Redes Sociales</h3><div class="social-links"><a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div><p class="hashtag">#JorgeYGiselaSeEnamoran</p></div>
+        <div class="footer-section"><h3>Información Adicional</h3><p><strong>Código de vestimenta:</strong> Formal elegante</p><p><strong>Estacionamiento:</strong> Disponible en ambos lugares</p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 - Boda de Jorge Hugo & Gisela Esmeralda. Hecho con ❤️</p></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Lightbox para galería (backup si por alguna razón el otro script no carga)
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      if (!lb || !img) return;
+      img.src = src;
+      lb.style.display = 'flex';
+      lb.setAttribute('aria-hidden', 'false');
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      if (!lb || !img) return;
+      lb.style.display = 'none';
+      img.src = '';
+      lb.setAttribute('aria-hidden', 'true');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
+                </div>
+                <div class="location-details">
+                    <h3>Ceremonia</h3>
+                    <p><strong>Patio Central (Museo Universitario de Hacienda Nogueras)</strong></p>
+                    <p>Hacienda Nogueras / Ex Hacienda de Nogueras</p>
+                    <p>Comala, Colima, México</p>
+                    <a href="https://www.google.com/maps/place/Museo+Universitario+de+Hacienda+Nogueras/@19.308965,-103.725436,17z" class="location-btn" target="_blank"><i class="fas fa-map-marker-alt"></i> Ver en Google Maps</a>
+                </div>
+                <div class="location-details">
+                    <h3>La Fiesta</h3>
+                    <p><strong>La Molienda (antigua fábrica de caña)</strong></p>
+                    <p>Hacienda Nogueras / Ex Hacienda de Nogueras</p>
+                    <p>Comala, Colima, México</p>
+                    <a href="https://www.google.com/maps/place/Museo+Universitario+de+Hacienda+Nogueras/@19.308965,-103.725436,17z" class="location-btn" target="_blank"><i class="fas fa-map-marker-alt"></i> Ver en Google Maps</a>
+                </div>
+            </div>
+            <div class="map-container">
+                <div id="map" class="map-embed">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.282964243695!2d-103.7276246850736!3d19.30896498694359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842545e2e2e2e2e3%3A0x7e7e7e7e7e7e7e7e!2sMuseo%20Universitario%20de%20Hacienda%20Nogueras!5e0!3m2!1ses-419!2smx!4v1692038400000!5m2!1ses-419!2smx" width="100%" height="320" style="border:0;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.10);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN RSVP -->
+<section id="rsvp" class="rsvp">
+    <div class="container">
+        <h2 class="section-title">Confirma tu Asistencia</h2>
+        <div class="rsvp-content">
+            <p class="rsvp-message">Tu presencia es muy importante para nosotros. Por favor confirma tu asistencia antes del <strong>15 de Noviembre de 2025</strong></p>
+            <div id="rsvpSuccess" class="rsvp-success">¡Gracias por confirmar tu asistencia!</div>
+            <form class="rsvp-form" id="rsvpForm">
+                                <div class="form-group">
+                                    <label for="name"><i class="fa-solid fa-user"></i> Nombre completo</label>
+                                    <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="guests"><i class="fa-solid fa-users"></i> ¿Cuántos asistirán?</label>
+                                    <select id="guests" name="guests" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message"><i class="fa-solid fa-comment"></i> Mensaje para los novios (opcional)</label>
+                                    <textarea id="message" name="message" rows="2" placeholder="¡Felicidades!"></textarea>
+                                </div>
+                                <button type="submit" class="rsvp-btn"><i class="fa-solid fa-paper-plane"></i> Confirmar asistencia</button>
+                                <div id="rsvp-feedback" style="margin-top:1rem;"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN REGALOS -->
+<section id="regalos" class="gifts">
+    <div class="container">
+        <h2 class="section-title">Mesa de Regalos</h2>
+        <div class="gifts-content">
+            <p class="gifts-message">Lo más importante para nosotros es tu presencia, pero si deseas hacernos un obsequio, puedes apoyarnos con un depósito del monto que desees. ¡Gracias por tu generosidad y cariño!</p>
+            <div class="gift-card">
+                <h3>Datos bancarios</h3>
+                <div class="gift-details">
+                    <p><strong>Banco:</strong> BBVA</p>
+                    <p><strong>Nombre:</strong> Jorge Hugo Rodriguez Peñaloza</p>
+                    <p><strong>Cuenta:</strong> <span id="cuenta-bancaria">1234567890</span> <button onclick="copiarCuenta()" class="copy-btn"><i class="fas fa-copy"></i> Copiar</button></p>
+                    <p><strong>CLABE:</strong> 012345678901234567</p>
+                </div>
+                <div class="gift-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=1234567890" alt="QR para depósito" />
+                    <p class="qr-caption">Escanea para transferir</p>
+                </div>
+            </div>
+            <div class="gift-alt"><p>¿Prefieres usar PayPal o MercadoPago? <br><a href="#" class="alt-link">Próximamente disponible</a></p></div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN FAQ -->
+<section id="faq" class="faq">
+    <div class="container">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="faq-list">
+            <div class="faq-item"><h4>¿Pueden asistir niños?</h4><p>¡Por supuesto! Los niños son bienvenidos a celebrar con nosotros.</p></div>
+            <div class="faq-item"><h4>¿Hay estacionamiento disponible?</h4><p>Sí, ambos lugares cuentan con estacionamiento gratuito.</p></div>
+            <div class="faq-item"><h4>¿Cuál es el código de vestimenta?</h4><p>Formal elegante. ¡Ven cómodo y listo para disfrutar!</p></div>
+            <div class="faq-item"><h4>¿Puedo llevar acompañante?</h4><p>Por favor indícalo en tu confirmación de asistencia (RSVP).</p></div>
+            <div class="faq-item"><h4>¿Cómo llego al lugar?</h4><p>Consulta la sección <a href="#ubicacion">Ubicación</a> para ver mapas y direcciones.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Para cualquier pregunta:</p>
+                <p><i class="fas fa-phone" aria-label="Teléfono"></i> +52 312 123 4567</p>
+                <p><i class="fas fa-envelope" aria-label="Correo electrónico"></i> jorgeygisela2025@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="hashtag">#JorgeYGiselaSeEnamoran</p>
+            </div>
+            <div class="footer-section">
+                <h3>Información Adicional</h3>
+                <p><strong>Código de vestimenta:</strong> Formal elegante</p>
+                <p><strong>Estacionamiento:</strong> Disponible en ambos lugares</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 - Boda de Jorge Hugo & Gisela Esmeralda. Hecho con ❤️</p>
+        </div>
+    </div>
+</footer>
+</body>
+<script>
+    // Lightbox para galería
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.getElementById('lightbox-img').src = '';
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+    });
+</script>
+</body>
+</html>
+
+    <!-- Sección Preguntas Frecuentes (FAQ) -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>¿Pueden asistir niños?</h4>
+                    <p>¡Por supuesto! Los niños son bienvenidos a celebrar con nosotros.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Hay estacionamiento disponible?</h4>
+                    <p>Sí, ambos lugares cuentan con estacionamiento gratuito.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cuál es el código de vestimenta?</h4>
+                    <p>Formal elegante. ¡Ven cómodo y listo para disfrutar!</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Puedo llevar acompañante?</h4>
+                    <p>Por favor indícalo en tu confirmación de asistencia (RSVP).</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cómo llego al lugar?</h4>
+                    <p>Consulta la sección <a href="#ubicacion">Ubicación</a> para ver mapas y direcciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
