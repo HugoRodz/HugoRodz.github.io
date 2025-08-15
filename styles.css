@@ -2,11 +2,12 @@
 
 /* ---- Variables y reset ---- */
 :root{
-    --bg: #fff;
+    --bg: #ffffff;
+    --window: #f3f4f6; /* gris ventana */
     --muted: #6b7280;
     --ink: #0f172a;
-    --accent: #b76e79; /* rosa suave */
-    --accent-2: #6f9ea6; /* azul/verde */
+    --emerald: #0f9d58; /* verde esmeralda */
+    --emerald-600: #0b7a43;
     --radius: 12px;
     --container: 1080px;
 }
@@ -21,19 +22,19 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 
 .header{border-bottom:1px solid #f1f1f1;background:transparent}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
-.brand-couple{font-family:'Great Vibes',cursive;font-size:34px;color:var(--accent)}
+.brand-couple{font-family:'Great Vibes',cursive;font-size:34px;color:var(--emerald)}
 .brand-date{display:block;font-size:12px;color:var(--muted)}
 .menu-btn{background:transparent;border:0;font-size:22px}
 .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
 .nav a{text-decoration:none;color:var(--muted);font-weight:600}
 
 .hero{padding:64px 0;text-align:center}
-.couple{font-family:'Great Vibes',cursive;font-size:56px;margin:0;color:var(--accent)}
+.couple{font-family:'Great Vibes',cursive;font-size:56px;margin:0;color:var(--emerald)}
 .amp{display:inline-block;margin:0 8px}
 .hero-sub{color:var(--muted);margin-top:6px}
 .hero-actions{margin-top:18px;display:flex;gap:12px;justify-content:center}
 .btn{padding:10px 18px;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer}
-.btn.primary{background:var(--accent);color:#fff;border-color:rgba(0,0,0,0.04)}
+.btn.primary{background:var(--emerald);color:#fff;border-color:rgba(0,0,0,0.04)}
 .btn.ghost{background:transparent;border:1px solid #eee;color:var(--ink)}
 
 .section{padding:40px 0}
@@ -44,19 +45,31 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 
 .timeline{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
 .timeline li{display:flex;flex-direction:column;background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
-.timeline strong{color:var(--accent-2)}
+.timeline strong{color:var(--emerald-600)}
 
 .grid-2{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start}
 .card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 24px rgba(16,24,40,0.04)}
 
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
-.gallery-item{background:#fff;border-radius:10px;overflow:hidden;border:0;padding:0}
-.gallery-item img{width:100%;height:120px;object-fit:cover;display:block}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+.gallery-item{background:#fff;border-radius:12px;overflow:hidden;border:0;padding:0;box-shadow:0 6px 20px rgba(12,18,20,0.04)}
+.gallery-item img{width:100%;height:120px;object-fit:cover;display:block;transform-origin:center}
+.gallery-item:hover img{transform:scale(1.04)}
 
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:1000}
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.72);z-index:1000}
 .lightbox[aria-hidden="false"]{display:flex}
-.lightbox img{max-width:92%;max-height:86%;border-radius:10px}
+.lightbox img{max-width:92%;max-height:86%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
 .lightbox-close{position:absolute;right:18px;top:18px;background:transparent;border:0;color:#fff;font-size:28px}
+
+/* Decorative leaves */
+.decor{position:absolute;pointer-events:none;opacity:0.15;filter:drop-shadow(0 6px 14px rgba(4,81,44,0.06))}
+.hero-inner{position:relative}
+.leaf-top{top:-40px;left:-40px;width:220px;transform:rotate(-12deg)}
+.leaf-bottom{right:-40px;bottom:-40px;width:260px;transform:rotate(18deg)}
+.leaf-float{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+/* subtle section background */
+.bg{background:linear-gradient(180deg,var(--window),#ffffff)}
 
 .map-wrap iframe{width:100%;height:280px;border-radius:10px;border:0;box-shadow:0 8px 24px rgba(16,24,40,0.06)}
 
