@@ -130,42 +130,47 @@ function initializeNavigation() {
 
 // Galería de imágenes
 function initializeGallery() {
-    const modal = document.getElementById('galleryModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.close');
-    
-    // Abrir modal al hacer click en una imagen
-    images.forEach((img, index) => {
-        img.addEventListener('click', function() {
-            modal.style.display = 'block';
-            modalImg.src = this.src;
-            currentImageIndex = index;
-        });
-    });
-    
-    // Cerrar modal
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Cerrar modal al hacer click fuera de la imagen
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const btnClose = document.querySelector('.lightbox-close');
+    const btnPrev = document.querySelector('.lightbox-prev');
+    const btnNext = document.querySelector('.lightbox-next');
+    const thumbsContainer = document.querySelector('.lightbox-thumbs');
+
+    const galleryImgs = Array.from(document.querySelectorAll('.gallery-item img'));
+
+    function openAt(index){
+        currentImageIndex = index;
+        lightboxImg.src = galleryImgs[currentImageIndex].src;
+        // update thumbs active
+        if(thumbsContainer){
+            thumbsContainer.querySelectorAll('img').forEach((t,i)=> t.classList.toggle('active', i===currentImageIndex));
         }
-    });
-    
-    // Navegación con teclado
-    document.addEventListener('keydown', function(e) {
-        if (modal.style.display === 'block') {
-            if (e.key === 'Escape') {
-                modal.style.display = 'none';
-            } else if (e.key === 'ArrowLeft') {
-                changeImage(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeImage(1);
-            }
-        }
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+    }
+
+    galleryImgs.forEach((img, i) => img.addEventListener('click', () => openAt(i)));
+
+    if(btnClose) btnClose.addEventListener('click', () => { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); });
+    if(btnPrev) btnPrev.addEventListener('click', () => changeImage(-1));
+    if(btnNext) btnNext.addEventListener('click', () => changeImage(1));
+
+    if(thumbsContainer){
+        // crear thumbs
+        thumbsContainer.innerHTML = '';
+        galleryImgs.forEach((g, i) => { const t = document.createElement('img'); t.src = g.src; t.addEventListener('click', ()=> openAt(i)); thumbsContainer.appendChild(t); });
+    }
+
+    // cerrar al click fuera
+    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); } });
+
+    // teclado
+    document.addEventListener('keydown', function(e){
+        if(!lightbox.classList.contains('open')) return;
+        if(e.key==='Escape') { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); }
+        if(e.key==='ArrowLeft') changeImage(-1);
+        if(e.key==='ArrowRight') changeImage(1);
     });
 }
 
