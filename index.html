@@ -1,23 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Boda Jorge Hugo & Gisela Esmeralda</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Invitación — Jorge & Gisela</title>
+  <meta name="description" content="Invitación de boda de Jorge Hugo & Gisela Esmeralda — información del evento, galería, confirmación y ubicación">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-container">
-      <div class="brand"><span class="brand-name">Jorge & Gisela</span></div>
-      <nav class="main-nav">
-        <button class="nav-toggle" aria-label="menu">☰</button>
-        <ul class="nav-list">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-couple">Jorge & Gisela</span>
+        <small class="brand-date">29 · Noviembre · 2025</small>
+      </div>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav">☰</button>
+      <nav id="nav" class="nav" aria-label="Navegación principal">
+        <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#historia">Nuestra Historia</a></li>
-          <li><a href="#evento">El Evento</a></li>
+          <li><a href="#programa">Programa</a></li>
           <li><a href="#galeria">Galería</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>
           <li><a href="#rsvp">Confirmar</a></li>
@@ -26,173 +31,110 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section id="inicio" class="hero">
-      <div class="hero-inner container text-center">
-        <h1 class="hero-title">Nos Casamos</h1>
-        <p class="hero-names">Jorge Hugo & Gisela Esmeralda</p>
-        <p class="hero-date">29 de Noviembre · 2025</p>
-        <div class="hero-cta">
-          <a href="#rsvp" class="btn primary">Confirmar asistencia</a>
-          <a href="#galeria" class="btn outline">Ver galería</a>
+      <div class="container hero-inner">
+        <h1 class="couple">Jorge <span class="amp">&</span> Gisela</h1>
+        <p class="hero-sub">Nos casamos — 29 de Noviembre, 2025</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#rsvp">Confirmar asistencia</a>
+          <a class="btn ghost" href="#galeria">Ver galería</a>
         </div>
       </div>
     </section>
 
     <section id="historia" class="section">
       <div class="container">
-        <h2 class="section-title centered">Nuestra Historia</h2>
-        <div class="story-card">
-          <p class="lead">Tres momentos que nos definieron: el encuentro, la primera cita y la promesa.</p>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>26 feb, 2024 — Primer encuentro</h3>
-                <p>Una presentación que terminó en conversación larga y una conexión inesperada.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>26 ene, 2025 — Primera cita</h3>
-                <p>Una noche en Uruapan donde descubrimos lo que queríamos compartir.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>27 jun, 2025 — Promesa</h3>
-                <p>Una pregunta, una respuesta y la certeza de dar un paso juntos.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2 class="title">Nuestra Historia</h2>
+        <p class="center muted">Desde el primer encuentro hasta hoy — unos hitos que nos llevaron a este día.</p>
+        <ul class="timeline">
+          <li>
+            <strong>26 feb, 2024</strong>
+            <span>Primer encuentro — una charla que se volvió larga y especial.</span>
+          </li>
+          <li>
+            <strong>26 ene, 2025</strong>
+            <span>Primera cita — descubrimos afinidades y risas compartidas.</span>
+          </li>
+          <li>
+            <strong>27 jun, 2025</strong>
+            <span>La promesa — el momento en que supimos que sería para siempre.</span>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="evento" class="section bg-soft">
-      <div class="container">
-        <h2 class="section-title">Detalles del Evento</h2>
-        <div class="cards">
+    <section id="programa" class="section bg">
+      <div class="container grid-2">
+        <div>
+          <h2 class="title">El Evento</h2>
           <div class="card">
             <h3>Ceremonia</h3>
-            <p><strong>2:00 PM</strong></p>
-            <p>Patio Central (Museo Universitario de Hacienda Nogueras)</p>
+            <p><strong>14:00</strong> — Patio Central, Museo Universitario de Hacienda Nogueras</p>
           </div>
           <div class="card">
             <h3>Recepción</h3>
-            <p><strong>4:00 PM</strong></p>
-            <p>La Molienda (antigua fábrica de caña)</p>
+            <p><strong>16:00</strong> — La Molienda (antigua fábrica de caña)</p>
           </div>
         </div>
+        <aside>
+          <h3 class="title-sm">Dress code</h3>
+          <p>Formal elegante</p>
+          <h3 class="title-sm">Contacto</h3>
+          <p>jorgeygisela2025@gmail.com</p>
+        </aside>
       </div>
     </section>
 
     <section id="galeria" class="section">
       <div class="container">
-        <h2 class="section-title">Nuestra Galería</h2>
-        <div class="gallery gallery-tiles">
-          <div class="gallery-item"><img src="images/colima.jpeg" alt="colima"></div>
-          <div class="gallery-item"><img src="images/propuesta de matrimonio.jpeg" alt="propuesta"></div>
-          <div class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (1).jpeg" alt="foto1"></div>
-          <div class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (3).jpeg" alt="foto2"></div>
-          <div class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (4).jpeg" alt="foto3"></div>
-          <div class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (5).jpeg" alt="foto4"></div>
-          <div class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (6).jpeg" alt="foto5"></div>
-          <div class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (7).jpeg" alt="foto6"></div>
+        <h2 class="title">Galería</h2>
+        <p class="muted center">Pequeño álbum — haz click para ampliar</p>
+        <div class="gallery">
+          <button class="gallery-item"><img src="images/colima.jpeg" alt="colima"></button>
+          <button class="gallery-item"><img src="images/propuesta de matrimonio.jpeg" alt="propuesta"></button>
+          <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (1).jpeg" alt="foto"></button>
+          <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (3).jpeg" alt="foto"></button>
+          <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.13 AM (4).jpeg" alt="foto"></button>
+          <button class="gallery-item"><img src="images/WhatsApp Image 2025-08-14 at 1.54.14 AM (1).jpeg" alt="foto"></button>
         </div>
       </div>
 
       <div id="lightbox" class="lightbox" aria-hidden="true">
         <button class="lightbox-close" aria-label="Cerrar">×</button>
-        <button class="lightbox-prev" aria-label="Anterior">‹</button>
-        <img id="lightbox-img" class="lightbox-image" src="" alt="Imagen ampliada">
-        <button class="lightbox-next" aria-label="Siguiente">›</button>
+        <img id="lightbox-img" src="" alt="imagen ampliada">
       </div>
     </section>
 
-    <section id="ubicacion" class="section bg-soft">
+    <section id="ubicacion" class="section bg">
       <div class="container">
-        <h2 class="section-title">Ubicación</h2>
-        <div class="location-grid">
-          <div class="location-text">
-            <h3 class="muted">Hacienda Nogueras</h3>
-            <p>El Patio Central del Museo Universitario de Hacienda Nogueras será el espacio donde nos uniremos.</p>
-            <a class="btn outline" href="https://www.google.com/maps/place/Museo+Universitario+de+Hacienda+Nogueras/@19.308965,-103.725436,17z" target="_blank">Ver en Google Maps</a>
-          </div>
-          <div class="location-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.282964243695!2d-103.7276246850736!3d19.30896498694359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842545e2e2e2e3%3A0x7e7e7e7e7e7e7e7e!2sMuseo%20Universitario%20de%20Hacienda%20Nogueras!5e0!3m2!1ses-419!2smx!4v1692038400000!5m2!1ses-419!2smx" width="100%" height="280" style="border:0;border-radius:10px;" loading="lazy"></iframe>
-          </div>
+        <h2 class="title">Ubicación</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.282964243695!2d-103.7276246850736!3d19.30896498694359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842545e2e2e2e3%3A0x7e7e7e7e7e7e7e7e!2sMuseo%20Universitario%20de%20Hacienda%20Nogueras!5e0!3m2!1ses-419!2smx!4v1692038400000!5m2!1ses-419!2smx" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
 
     <section id="rsvp" class="section">
-      <div class="container">
-        <h2 class="section-title">Confirma tu asistencia</h2>
-        <form id="rsvpForm" class="rsvp-form">
-          <div class="form-row">
-            <label for="name">Nombre completo</label>
-            <input id="name" name="name" required>
-          </div>
-          <div class="form-row">
-            <label for="guests">¿Cuántos asistirán?</label>
-            <select id="guests" name="guests">
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="message">Mensaje (opcional)</label>
-            <textarea id="message" rows="3"></textarea>
-          </div>
-          <div class="form-row">
+      <div class="container narrow">
+        <h2 class="title">Confirmar asistencia</h2>
+        <form id="rsvpForm" class="rsvp">
+          <label>Nombre completo<input name="name" id="name" required></label>
+          <label>Asistirán (personas)<select id="guests" name="guests"><option>1</option><option>2</option><option>3</option></select></label>
+          <label>Mensaje (opcional)<textarea id="message" rows="3"></textarea></label>
+          <div class="rsvp-actions">
             <button class="btn primary" type="submit">Enviar</button>
+            <button class="btn ghost" type="button" id="saveDraft">Guardar borrador</button>
           </div>
-          <div id="rsvpFeedback" class="rsvp-feedback" aria-live="polite"></div>
+          <div id="rsvp-msg" role="status" aria-live="polite" class="muted"></div>
         </form>
       </div>
     </section>
 
-    <section id="regalos" class="section gifts bg-soft">
-      <div class="container">
-        <h2 class="section-title">Mesa de Regalos</h2>
-        <div class="gift-card">
-          <h3>Datos bancarios</h3>
-          <p><strong>Banco:</strong> BBVA</p>
-          <p><strong>Cuenta:</strong> <span id="cuenta-bancaria">1234567890</span> <button onclick="copiarCuenta()" class="copy-btn">Copiar</button></p>
-        </div>
-      </div>
+    <section class="section small">
+      <div class="container center muted">© 2025 Jorge Hugo & Gisela Esmeralda</div>
     </section>
-
-    <section id="faq" class="section faq">
-      <div class="container">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
-        <div class="faq-list">
-          <div class="faq-item"><h4>¿Pueden asistir niños?</h4><p>¡Por supuesto! Los niños son bienvenidos.</p></div>
-          <div class="faq-item"><h4>¿Código de vestimenta?</h4><p>Formal elegante.</p></div>
-        </div>
-      </div>
-    </section>
-
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>Contacto</h4>
-          <p>+52 312 123 4567</p>
-          <p>jorgeygisela2025@gmail.com</p>
-        </div>
-        <div>
-          <h4>Redes</h4>
-          <p>#JorgeYGiselaSeEnamoran</p>
-        </div>
-      </div>
-      <div class="footer-bottom text-center">&copy; 2025 Jorge Hugo & Gisela Esmeralda</div>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
